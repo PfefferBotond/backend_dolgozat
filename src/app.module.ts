@@ -1,7 +1,12 @@
+/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import {AccountNumberData} from './entities/AccountNumberData.entity';
+import {BalanceData} from './entities/BalanceData.entity';
+import {ProfielData} from './entities/ProfileData.entity';
+
 
 @Module({
   imports: [
@@ -13,7 +18,7 @@ import { AppService } from './app.service';
       password: process.env.DB_PASSWORD || '',
       database: process.env.DB_DATABASE || 'database',
       entities: [
-        /* List of entities here */
+        AccountNumberData, BalanceData, Profiled
       ],
       synchronize: true,
     }),
